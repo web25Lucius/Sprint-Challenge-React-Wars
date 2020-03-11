@@ -24,13 +24,23 @@ In this challenge, create a web page that presents a styled list of Star Wars ch
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
+- [x] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+React is a library built by Facebook devs to handle the problem with their dynamic data/ high volumne use. Vanilla js. is too expensive with time and processing because it rebuilds the DOM with every tranistion on the page.  React works thourh a Virtual DOM so the entire page doesn't have to be rebuilt with every click/data input.  It's much faster.  
 
 - [ ] What does it mean to _think_ in react?
 
 - [ ] Describe state.
 
+    state creates blank slate that you can mutate with setState.  It gives us a starting point to figure out our starting point. 
+    So if we were using a number to set state and we wanted to start at 0, we'd set the state at 0 and then later use setState to alter that number.  
+    let sum = 0; 
+    sum += 5; //5 (I think)
+
 - [ ] Describe props.
+    in react we can pass data using our own definitions.  Kind of like xml or html- you can create your own.  <button className"watchThis"  propIMadeUp = 'this one' >
+    
+
 
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
 

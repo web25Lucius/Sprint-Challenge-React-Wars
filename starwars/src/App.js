@@ -1,8 +1,22 @@
 import React , {useState} from 'react';
+import {useEffect} from 'react'; 
 import './App.css';
 
+
+const [data, setData] = useState (""); 
+const [error, setError] = useState (""); 
+
+useEffect (() =>{
+  fetch('http https://swapi.co/api/people/names/')
+  .then (response => setData (response.data))
+  .catch(error => setError(error.response))
+}, []);
+ 
 const App = () => {
   
+
+
+
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 

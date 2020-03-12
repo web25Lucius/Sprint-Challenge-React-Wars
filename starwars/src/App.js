@@ -1,20 +1,22 @@
-import React , {useState} from 'react';
-import {useEffect} from 'react'; 
+import React , {useState, useEffect} from 'react';
 import './App.css';
 
 
-const [data, setData] = useState (""); 
-const [error, setError] = useState (""); 
+function Characters () {
+const [data, setData] = useState (); 
+const [Error, setError] = useState (); 
 
-useEffect (() =>{
-  fetch('http https://swapi.co/api/people/names/')
-  .then (response => setData (response.data))
-  .catch(error => setError(error.response))
-}, []);
- 
+  useEffect (() => {
+    fetch('http https://swapi.co/api/people/names/')
+    // console.log(Response);
+    .then (Response => setData(Response.data))
+    .catch(Error => setError(Error.Response))
+  }, []);  
+
+}
+
 const App = () => {
-  
-
+ 
 
 
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -27,7 +29,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <div>setData</div>
     </div>
+    
   );
 }
 

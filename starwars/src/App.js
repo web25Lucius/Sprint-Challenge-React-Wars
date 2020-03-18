@@ -1,45 +1,21 @@
-import React, { useState, useEffect } from "react";
-import "./components/StarWars.css";
+import React from 'react'
+import Card from './components/StarWars.js';
 import './App.css';
-import axios from "axios";
 
-
-export default function App() {
-  const [charList, setCharName] = useState([]);
-
-  useEffect(
-    () =>
-      axios
-        .get("https://swapi.co/api/people/")
-        .then(response => setCharName(response.data.results))
-        .catch(error => console.log("errorrrrr", error.message)),
-    []
-  );
-
-
-  //return (
-    //     <div className="App">
-    //       <h1 className="Header">React Wars</h1>
-    //     </div>
-    //   );
+// import axios from "axios";
 
 
 
-
-  return (
+ const App = () => {
+   return  (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <h1>React Wars</h1>
       <h2>Which is your favorite character?</h2>
-      {charList.map(char => (
-        <p>{char.name}</p>
-      ))}
-    </div>
-  );
+      <Card/>
+   </div>); 
 }
 
-
-
-
+export default App 
 
 
 

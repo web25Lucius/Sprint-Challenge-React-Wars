@@ -1,40 +1,75 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios'
-import styled from 'styled-components'
-import {Card as StyledCard} from '@material-ui/core'
-
-const StyleCard = {
-  color: 'palevioletred',
-  fontWeight: 'bold',
-  padding: 15, 
-  backgroundColor: 'white' 
-}
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import SWCard from './swCard'
 
 
 
-const  Card = () => {
-const [charList, setCharName] = useState([]);
-
- useEffect(
-    () =>
-      axios
-        .get("https://swapi.co/api/people/")
-        .then(response => setCharName(response.data.results))
-        .catch(error => console.log("errorrrrr", error.message)),
-    []
-  );
+const  StarWars = () => {
+  const [charList, setCharList] = useState([]);
   
-  return (
-    <div className="card">
-      {charList.map(char => (
-        <StyledCard style={{...StyleCard}}>{char.name}</StyledCard>
-      ))}
-    </div>
-  );
-      }
+   useEffect(
+      () =>
+        axios
+          .get("https://swapi.py4e.com/api/people/")
+          .then(response => setCharList(response.data.results))
+          .catch(error => console.log("errorrrrr, this is not the droid you're looking for", error.message)),
+      []
+    );
+    
+    return (
+      <div className="card">
+        {charList.map(char => (
+         <SWCard name={char.name} birth_year={char.birth_year} hair_color={char.hair_color} eye_color={char.eye_color}/>
+        
+      )
+      )};
+      </div>
+    );
+        }
+  
+  
+  export default StarWars
 
 
-export default Card
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const  Card = () => {
+// const [charList, setCharName] = useState([]);
+
+//  useEffect(
+//     () =>
+//       axios
+//         .get("https://swapi.co/api/people/")
+//         .then(response => setCharName(response.data.results))
+//         .catch(error => console.log("errorrrrr", error.message)),
+//     []
+//   );
+  
+//   return (
+//     <div className="card">
+//       {charList.map(char => (
+//         <StyledCard style={{...StyleCard}}>{char.name}</StyledCard>
+//       ))}
+//     </div>
+//   );
+//       }
+
+
+// export default Card
 
 
 
